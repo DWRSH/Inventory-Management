@@ -1,7 +1,7 @@
 import axios from "axios";
 
 // 🌐 Backend Base URL (Direct)
-const API_URL = "https://im-server-f175.onrender.com/api/returns";
+const API_URL = import.meta.env.VITE_API_URL+"/api/returns";
 
 const api = axios.create({
   baseURL: API_URL,
