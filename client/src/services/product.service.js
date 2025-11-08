@@ -2,7 +2,7 @@
 
 import axios from 'axios';
 
-const API_URL = 'https://im-server-f175.onrender.com/api/products';
+const API_URL = import.meta.env.VITE_API_URL+"/api/products";
 const api = axios.create({ baseURL: API_URL });
 
 // Get all products
