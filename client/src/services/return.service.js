@@ -2,7 +2,7 @@
 
 import axios from 'axios';
 
-const API_URL = 'http://localhost:5000/api/returns';
+const API_URL = 'https://im-server-f175.onrender.com/api/returns';
 
 const api = axios.create({
   baseURL: API_URL,
