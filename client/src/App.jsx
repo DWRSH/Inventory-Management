@@ -1,23 +1,28 @@
 // File: client/src/App.jsx
 
-import React, { useState } from 'react';
-import { BrowserRouter, Routes, Route, NavLink } from 'react-router-dom';
+import React, { useState } from "react";
+import {
+  BrowserRouter,
+  Routes,
+  Route,
+  NavLink,
+  Navigate, // 👈 Add this
+} from "react-router-dom";
 
 // Page Imports
-import Dashboard from './pages/Dashboard';
-import Products from './pages/Products';
-import Pos from './pages/Pos';
-import SalesHistory from './pages/SalesHistory';
-import ReturnHistory from './pages/ReturnHistory';
-import Customers from './pages/Customers';
+import Dashboard from "./pages/Dashboard";
+import Products from "./pages/Products";
+import Pos from "./pages/Pos";
+import SalesHistory from "./pages/SalesHistory";
+import ReturnHistory from "./pages/ReturnHistory";
+import Customers from "./pages/Customers";
 
 function App() {
   const [menuOpen, setMenuOpen] = useState(false);
 
-  // Active link style
   const navLinkClass = ({ isActive }) => {
     const base =
-      'block px-3 py-2 font-semibold rounded-md transition-colors duration-200';
+      "block px-3 py-2 font-semibold rounded-md transition-colors duration-200";
     return isActive
       ? `${base} text-white bg-blue-600`
       : `${base} text-gray-300 hover:text-white hover:bg-gray-700`;
@@ -28,7 +33,7 @@ function App() {
       {/* Navbar */}
       <nav className="bg-gray-900 w-full">
         <div className="container mx-auto px-4 flex justify-between items-center h-16">
-          {/* Brand Name */}
+          {/* Brand */}
           <NavLink to="/" className="text-2xl font-bold text-white">
             Vivah Galaxy
           </NavLink>
@@ -162,6 +167,9 @@ function App() {
           <Route path="/sales" element={<SalesHistory />} />
           <Route path="/returns" element={<ReturnHistory />} />
           <Route path="/customers" element={<Customers />} />
+
+          {/* 👇 Default redirect if no route matches */}
+          <Route path="*" element={<Navigate to="/" replace />} />
         </Routes>
       </div>
     </BrowserRouter>
