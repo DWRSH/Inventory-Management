@@ -1,32 +1,26 @@
-// File: client/src/services/return.service.js
+import axios from "axios";
 
-import axios from 'axios';
-
-const API_URL = 'https://im-server-f175.onrender.com/api/returns';
+// 🌐 Backend Base URL (Direct)
+const API_URL = "https://im-server-f175.onrender.com/api/returns";
 
 const api = axios.create({
   baseURL: API_URL,
 });
 
-/**
- * एक नया रिटर्न (वापसी) बनाता है
- */
+// 🔁 Create a return record
 const createReturn = (returnData) => {
-  return api.post('/', returnData);
+  // Example: { customer, originalSale, itemsReturned, totalRefundAmount }
+  return api.post("/", returnData);
 };
 
-// --- (नया) सारे Return Bills पाने के लिए ---
-/**
- * सारे रिटर्न बिल्स की हिस्ट्री लाता है
- */
+// 📜 Get all returns (optional)
 const getReturns = () => {
-  return api.get('/');
+  return api.get("/");
 };
-// --- ---
 
 const returnService = {
   createReturn,
-  getReturns, // नया फंक्शन एक्सपोर्ट करें
+  getReturns,
 };
 
 export default returnService;
