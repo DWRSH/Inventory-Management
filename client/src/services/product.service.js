@@ -2,7 +2,7 @@
 
 import axios from 'axios';
 
-const API_URL = 'http://localhost:5000/api/products';
+const API_URL = 'https://im-server-f175.onrender.com/api/products';
 const api = axios.create({ baseURL: API_URL });
 
 // Get all products
