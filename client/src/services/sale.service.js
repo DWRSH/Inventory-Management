@@ -3,7 +3,7 @@
 import axios from 'axios';
 
 // API का बेस URL सेट करें
-const API_URL = 'http://localhost:5000/api/sales';
+const API_URL = 'https://im-server-f175.onrender.com/api/sales';
 
 const api = axios.create({
   baseURL: API_URL,
