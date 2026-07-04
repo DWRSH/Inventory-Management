@@ -90,6 +90,6 @@ const addPaymentToCustomer = async (req, res) => {
 
 module.exports = {
   getAllCustomers,
-  getCustomerById, // यह अब अपडेट हो गया है
+  getCustomerById, 
   addPaymentToCustomer,
 };
